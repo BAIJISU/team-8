@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MEDISOLVER - Clinic Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        .btn-diagnosis {
+            width: 100%;
+            max-width: 600px; /* 버튼의 최대 너비 설정 */
+            height: 60px; /* 원하는 높이로 설정 */
+            margin: 20px auto; /* 중앙 정렬을 위해 자동 여백 설정 */
+            font-size: 18px; /* 폰트 크기 조정 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0463FA; /* 배경색을 붉은색으로 변경 */
+            color: white; /* 글자색을 흰색으로 설정 */
+        }
+        
+
+        .btn-symptom {
+            width: 100%;
+            max-width: 200px; /* 모든 버튼의 최대 너비를 동일하게 설정 */
+            height: 50px; /* 버튼 높이를 동일하게 설정 */
+            margin: 10px 0; /* 각 버튼 사이에 여백 추가 */
+        }
+
+        .symptom-section, .sub-symptom-section {
+            display: none;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .message {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+    </style>
+</head>
+<head>
+    <meta charset="utf-8">
+    <title>MEDISOLVER - Clinic Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+  <style>
+        .page-header {
+            background: url('img/feature.jpeg') no-repeat center center;
+            background-size: cover;
+        }
+    </style>  
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+     
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+        <a href="dhp_1.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h1 class="m-0 text-primary"><i class="far fa-hospital me-3"></i>MEDISOLVER</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="dhp_1.html" class="nav-item nav-link">소개</a>
+                <a href="dhp_2.html" class="nav-item nav-link">이용 방법</a>
+                <a href="dhp_3.html" class="nav-item nav-link active">증상 진단</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병원/약국 찾기</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="dhp_4.1.html" class="dropdown-item">병원 찾기</a>
+                        <a href="dhp_4.2.html" class="dropdown-item">약국 찾기</a>
+                    </div>
+                </div>
+                <a href="dhp_5.html" class="nav-item nav-link">약 정보</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">증상 진단</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb text-uppercase mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">소개</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">병원/약국 찾기</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">증상 진단</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">증상 진단</p>
+                <h1>Health Care Solutions</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <button class="btn btn-primary btn-diagnosis" onclick="showSymptomSelection()">증상진단하기</button>
+                </div>
+            </div>
+
+            <div id="symptom-selection" class="symptom-section">
+                <h2>증상 선택</h2>
+                <div class="d-flex justify-content-around flex-wrap">
+                    <button class="btn btn-outline-primary btn-symptom" onclick="showSubSymptomSection('head')">두통</button>
+                    <button class="btn btn-outline-primary btn-symptom" onclick="showSubSymptomSection('stomach')">복통</button>
+                    <button class="btn btn-outline-primary btn-symptom" onclick="showSubSymptomSection('eye')">눈 관련증상</button>
+                    <button class="btn btn-outline-primary btn-symptom" onclick="showSubSymptomSection('fever')">발열 증상</button>
+                </div>
+            </div>
+
+            <div id="head" class="sub-symptom-section">
+                <h3>두통 증상</h3>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="head" value="긴장성 두통"> 머리의 앞 또는 뒤부분에 통증이 있다.</label>
+                    <label><input type="checkbox" name="head" value="긴장성 두통"> 관자놀이와 뒷부분에 지속적인 통증이 있다.</label>
+                    <label><input type="checkbox" name="head" value="긴장성 두통"> 머리 뒷부분을 짓누르는 듯한 느낌이 있다.</label>
+                    <label><input type="checkbox" name="head" value="긴장성 두통"> 머리 전체에 주기적인 통증이 있다.</label>
+                    <label><input type="checkbox" name="head" value="편두통"> 어깨와 머리에 조이는 듯한 통증이 지속된다.</label>
+                    <label><input type="checkbox" name="head" value="편두통"> 최근 혈관이완제를 복용한 적이 있다.</label>
+                    <label><input type="checkbox" name="head" value="편두통"> 머리의 한쪽이나 양쪽에 심한 통증이 있다.</label>
+                    <label><input type="checkbox" name="head" value="편두통"> 구역질과 구토 증세가 있다.</label>
+                    <label><input type="checkbox" name="head" value="편두통"> 최근 과한 심리적 긴장감을 느낀 적이 있다.</label>
+                    <label><input type="checkbox" name="head" value="편두통"> 최근 피임약을 복용한 적이 있다.</label>
+                    <label><input type="checkbox" name="head" value="편두통"> 최근 몸의 심한 피로를 느낀 적이 있다.</label>
+                    <label><input type="checkbox" name="head" value="편두통"> 최근 과음을 한 적이 있다.</label>
+                    <label><input type="checkbox" name="head" value="군집성 두통"> 현재 월경증이다.</label>
+                    <label><input type="checkbox" name="head" value="군집성 두통"> 일정 기간동안 심한 두통이 반복적으로 발생했다.</label>
+                    <label><input type="checkbox" name="head" value="군집성 두통"> 통증이 눈 주위에서 시작해서 주위로 퍼져나간다.</label>
+                    <label><input type="checkbox" name="head" value="군집성 두통"> 눈물이랑 콧물이 흐른다.</label>
+                    <label><input type="checkbox" name="head" value="군집성 두통"> 얼굴이 붉어진다.</label>
+                    <label><input type="checkbox" name="head" value="군집성 두통"> 최근 과도한 수면을 취한 적이 있다.</label>
+                    <label><input type="checkbox" name="head" value="군집성 두통"> 앞이 안보인다.</label>
+                    <label><input type="checkbox" name="head" value="군집성 두통"> 손가락이나 입술에 마비현상이 나타난다.</label>
+                </div>
+                <button class="btn btn-success mt-3" onclick="checkSymptoms('head', 4)">진단하기</button>
+                <div class="message" id="headMessage"></div>
+            </div>
+
+            <div id="stomach" class="sub-symptom-section">
+                <h3>복통 증상</h3>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="stomach" value="급성 충수염"> 식욕이 없다.</label>
+                    <label><input type="checkbox" name="stomach" value="급성 충수염"> 속이 메슥거리고 토할 것 같은 느낌이 든다.</label>
+                    <label><input type="checkbox" name="stomach" value="급성 충수염"> 구토를 한다.</label>
+                    <label><input type="checkbox" name="stomach" value="급성 충수염"> 복부 압통 증상이 있다.</label>
+                    <label><input type="checkbox" name="stomach" value="급성 충수염"> 발열 증상이 있다.</label>
+                    <label><input type="checkbox" name="stomach" value="급성 충수염"> 우측 옆구리에 통증이 있다.</label>
+                    <label><input type="checkbox" name="stomach" value="급성 충수염"> 배변 후에도 변을 보고 싶은 증상이 있다.</label>
+                    <label><input type="checkbox" name="stomach" value="과민성 대장 증후군"> 복부 팽만 증상이 있다.</label>
+                    <label><input type="checkbox" name="stomach" value="과민성 대장 증후군"> 좌측 하복부에 통증이 있다.</label>
+                    <label><input type="checkbox" name="stomach" value="과민성 대장 증후군"> 복부의 여러 부위에서 통증이 발생한다.</label>
+                    <label><input type="checkbox" name="stomach" value="과민성 대장 증후군"> 배변 후에도 시원하지 않다.</label>
+                    <label><input type="checkbox" name="stomach" value="과민성 대장 증후군"> 위에 가스가 찬다.</label>
+                    <label><input type="checkbox" name="stomach" value="과민성 대장 증후군"> 설사를 한다.</label>
+                    <label><input type="checkbox" name="stomach" value="과민성 대장 증후군"> 변비 증상이 나타난다.</label>
+                    <label><input type="checkbox" name="stomach" value="소화불량"> 위 내에 음식물이 계속 남아 있는 것 같은 느낌이 든다.</label>
+                    <label><input type="checkbox" name="stomach" value="소화불량"> 식사 시작 직후에 배가 부르다.</label>
+                    <label><input type="checkbox" name="stomach" value="소화불량"> 상복부가 팽팽한 느낌이 있다.</label>
+                    <label><input type="checkbox" name="stomach" value="소화불량"> 토할 것 같은 느낌이 든다.</label>
+                    <label><input type="checkbox" name="stomach" value="소화불량"> 명치에 통증이 있다.</label>
+                    <label><input type="checkbox" name="stomach" value="소화불량"> 속이 쓰리다.</label>
+                </div>
+                <button class="btn btn-success mt-3" onclick="checkSymptoms('stomach', 10)">진단하기</button>
+                <div class="message" id="stomachMessage"></div>
+            </div>
+
+            <div id="eye" class="sub-symptom-section">
+                <h3>눈관련 증상</h3>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="eye" value="다래끼"> 눈꺼풀의 가장자리가 부어올랐다.</label>
+                    <label><input type="checkbox" name="eye" value="다래끼"> 부어오른 자리에 통증이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="다래끼"> 부어오른 자리가 단단해졌다.</label>
+                    <label><input type="checkbox" name="eye" value="다래끼"> 눈꺼풀을 뒤집었을 때 노란색 농양점이 보인다.</label>
+                    <label><input type="checkbox" name="eye" value="아폴로 눈병"> 눈에 통증이있다.</label>
+                    <label><input type="checkbox" name="eye" value="아폴로 눈병"> 이물감이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="아폴로 눈병"> 눈물흘림이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="아폴로 눈병"> 충혈 증상이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="결막염"> 눈에 통증이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="결막염"> 이물감이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="결막염"> 눈물 흘림이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="결막염"> 눈곱이 잘 생긴다.</label>
+                    <label><input type="checkbox" name="eye" value="결막염"> 간지러운 증상이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="각막염"> 눈에 통증이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="각막염"> 눈물 흘림이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="각막염"> 충혈 증상이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="각막염"> 눈부심이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="각막염"> 갑자기 시력이 나빠졌다.</label>
+                    <label><input type="checkbox" name="eye" value="안구 건조증"> 이물감이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="안구 건조증"> 눈이 시리다.</label>
+                    <label><input type="checkbox" name="eye" value="안구 건조증"> 눈이 콕콕 쑤시는 느낌이 있다.</label>
+                    <label><input type="checkbox" name="eye" value="안구 건조증"> 눈을 뜨고 있으면 증상이 심화되고, 감으면 완화된다.</label>
+                    <label><input type="checkbox" name="eye" value="안구 건조증"> 눈에 심한 건조감이 든다.</label>
+                </div>
+                <button class="btn btn-success mt-3" onclick="checkSymptoms('eye', 4)">진단하기</button>
+                <div class="message" id="eyeMessage"></div>
+            </div>
+
+            <div id="fever" class="sub-symptom-section">
+                <h3>발열 증상</h3>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="fever" value="열사병"> 무력감이 든다.</label>
+                    <label><input type="checkbox" name="fever" value="열사병"> 어지럽다.</label>
+                    <label><input type="checkbox" name="fever" value="열사병"> 구역질이 난다.</label>
+                    <label><input type="checkbox" name="fever" value="열사병"> 두통이 있다.</label>
+                    <label><input type="checkbox" name="fever" value="열사병"> 졸음이 과하게 쏟아진다.</label>
+                    <label><input type="checkbox" name="fever" value="열사병"> 근육에 떨림이 있다.</label>
+                    <label><input type="checkbox" name="fever" value="열사병"> 40도 이상의 고열이 나지만, 땀이 나지 않는다.</label>
+                    <label><input type="checkbox" name="fever" value="열사병"> 피부가 건조하다.</label>
+                    <label><input type="checkbox" name="fever" value="열사병"> 경련을 일으킨다.</label>
+                    <label><input type="checkbox" name="fever" value="일사병"> 어지럽다.</label>
+                    <label><input type="checkbox" name="fever" value="일사병"> 경련을 일으킨다.</label>
+                    <label><input type="checkbox" name="fever" value="일사병"> 심박동이 빠르다.</label>
+                    <label><input type="checkbox" name="fever" value="일사병"> 땀을 많이 흘린다.</label>
+                    <label><input type="checkbox" name="fever" value="일사병"> 구토 증세를 보인다.</label>
+                    <label><input type="checkbox" name="fever" value="일사병"> 복통이 있다.</label>
+                </div>
+                <button class="btn btn-success mt-3" onclick="checkSymptoms('fever', 4)">진단하기</button>
+                <div class="message" id="feverMessage"></div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <script>
+        function showSymptomSelection() {
+            document.getElementById("symptom-selection").style.display = "block";
+        }
+
+        function showSubSymptomSection(symptom) {
+            document.querySelectorAll(".sub-symptom-section").forEach(function(section) {
+                section.style.display = "none";
+            });
+            document.getElementById(symptom).style.display = "block";
+        }
+
+        function checkSymptoms(symptomType, symptomThreshold) {
+            let checkboxes = document.querySelectorAll(`input[name=${symptomType}]:checked`);
+            let symptomCounts = {
+                "긴장성 두통": 0,
+                "편두통": 0,
+                "군집성 두통": 0,
+                "급성 충수염": 0,
+                "과민성 대장 증후군": 0,
+                "소화불량": 0,
+                "다래끼": 0,
+                "아폴로 눈병": 0,
+                "결막염": 0,
+                "각막염": 0,
+                "안구 건조증": 0,
+                "열사병": 0,
+                "일사병": 0
+            };
+
+            checkboxes.forEach(function(checkbox) {
+                symptomCounts[checkbox.value]++;
+            });
+
+            let messages = [];
+            for (let [key, value] of Object.entries(symptomCounts)) {
+                if (value > 0) {
+                    let percentage = (value / symptomThreshold) * 100;
+                    messages.push(`${key}: ${percentage}% 의심됩니다.`);
+                }
+            }
+
+            let messageElement = document.getElementById(`${symptomType}Message`);
+            messageElement.innerHTML = messages.join("<br>");
+            messageElement.style.display = "block";
+        }
+    </script>
+   <!-- Footer Start -->
+   <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-light mb-4">Address</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>부산광역시 남구 용소로 45 부경대</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>051-629-4114</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>pknu.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
